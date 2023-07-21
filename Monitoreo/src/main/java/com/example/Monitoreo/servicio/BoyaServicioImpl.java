@@ -1,13 +1,12 @@
 package com.example.Monitoreo.servicio;
 
 import com.example.Monitoreo.entidad.Boya;
-import com.example.Monitoreo.entidad.Muestra;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class BoyaServicioImpl implements BoyaServicio{
+public class BoyaServicioImpl implements BoyaServicio {
 
     @Override
     public Boya crearBoya(Boya boya) {
@@ -25,27 +24,19 @@ public class BoyaServicioImpl implements BoyaServicio{
     }
 
     @Override
-    public Boya actualizarColorDeLuz(Long id, String color) {
+    public Boya actualizarColorLuz() {
         return null;
     }
 
     @Override
-    public Muestra registrarMuestra(Muestra muestra) {
-        return null;
-    }
-
-    @Override
-    public List<Muestra> obtenerMuestraPorIdDeBoya(Long idBoya) {
-        return null;
-    }
-
-    @Override
-    public void resetearColorDeLuz(Long id) {
+    public void actualizarColorLuz(Long id) {
 
     }
 
     @Override
-    public void resetearColor(Long id) {
+    public Boya actualizarBoya(Boya boya) {
 
+        return boya;
     }
+
 }

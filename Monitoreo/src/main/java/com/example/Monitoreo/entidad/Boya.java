@@ -18,7 +18,7 @@ public class Boya {
 
     private double latitudInstalacion;
 
-    @OneToMany(mappedBy = "boya")
+    @OneToMany(mappedBy = "boya", cascade = CascadeType.ALL)
     private List<Muestra> muestras;
 
     public Boya() {
@@ -34,10 +34,6 @@ public class Boya {
 
     public Long getId() {
         return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getColorLuz() {

@@ -3,10 +3,11 @@ package com.example.Monitoreo.entidad;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "muestra")
-public class Muestra {
+public class Muestra{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,6 +25,11 @@ public class Muestra {
     private double latitud;
 
     private double alturaNivelDelMar;
+
+    @PrePersist
+    public void asignarHorarioDeMuestra() {
+        horarioMuestra = LocalDateTime.now();
+    }
 
     public Muestra() {
     }
@@ -46,23 +52,15 @@ public class Muestra {
         return boya;
     }
 
-    public LocalDateTime getHorarioMuestra() {
-        return horarioMuestra;
-    }
-
-    public String getMatriculaEmbarcacion() {
-        return matriculaEmbarcacion;
-    }
-
-    public double getLongitud() {
-        return longitud;
-    }
-
-    public double getLatitud() {
-        return latitud;
+    public void setBoya(Boya boya) {
+        this.boya = boya;
     }
 
     public double getAlturaNivelDelMar() {
         return alturaNivelDelMar;
     }
+
+
 }
+
+

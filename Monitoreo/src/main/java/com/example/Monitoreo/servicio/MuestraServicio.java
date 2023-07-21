@@ -6,12 +6,13 @@ import java.util.List;
 
 public interface MuestraServicio {
 
-    public Muestra registrarMuestra(Long BoyaId, Muestra muestra);
-    public List<Muestra> listarMuestras();
+    Muestra registrarMuestra(Muestra muestra);
 
-    List<Muestra> obtenerMuestraPorIdDeBoya(Long idBoya, Long idMuestra);
+    Muestra obtenerColor(Muestra muestra);
 
     List<Muestra> obtenerMuestraPorIdDeBoya(Long idBoya);
+    
     void eliminarMuestra(Long id);
-    Muestra registrarMuestra(Muestra muestra);
+
+    Muestra obtenerMuestraPorId(Long id);
 }
